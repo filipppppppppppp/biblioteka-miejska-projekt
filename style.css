@@ -1,0 +1,529 @@
+/* --- ZMIENNE (Konfiguracja kolorów) --- */
+:root {
+  --bg-body: #f8f9fa;
+  --bg-header: #ffffff;
+  --text-main: #333333;
+  --text-light: #666666;
+  --primary: #004a8f;
+  --primary-dark: #003366;
+  --accent: #e6b800;
+  --white: #ffffff;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --radius: 8px;
+  --container-width: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-main);
+  background-color: var(--bg-body);
+  margin: 0;
+}
+
+/* --- UTILS --- */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  background: var(--accent);
+  color: #000;
+  padding: 12px 20px;
+  z-index: 1000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: top 0.3s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* --- PASEK DOSTĘPNOŚCI --- */
+#accessibility-bar {
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+  padding: 8px 0;
+  font-size: 0.9rem;
+}
+.access-flex {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+.access-btn {
+  background: var(--white);
+  border: 1px solid var(--text-light);
+  color: var(--text-main);
+  padding: 5px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.access-btn:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+.access-btn.active {
+  background: var(--text-main);
+  color: var(--accent);
+}
+
+/* --- NAGŁÓWEK --- */
+header {
+  background-color: var(--bg-header);
+  box-shadow: var(--shadow-sm);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo-symbol {
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  clip-path: polygon(
+    0% 10%,
+    45% 10%,
+    50% 20%,
+    55% 10%,
+    100% 10%,
+    100% 100%,
+    55% 90%,
+    50% 100%,
+    45% 90%,
+    0% 100%
+  );
+}
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+.logo-title {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--primary);
+  line-height: 1.1;
+}
+.logo-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 5px;
+}
+nav a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 600;
+  padding: 10px 15px;
+  border-radius: var(--radius);
+  transition: 0.2s;
+}
+nav a:hover,
+nav a.active {
+  background-color: #f0f4f8;
+  color: var(--primary);
+}
+
+/* --- HERO & WYSZUKIWARKA --- */
+.hero-section {
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--primary-dark) 100%
+  );
+  color: var(--white);
+  padding: 60px 40px;
+  border-radius: var(--radius);
+  margin-top: 40px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+.hero-content h1 {
+  margin-top: 0;
+  font-size: 2.2rem;
+}
+.hero-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+.search-box {
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto;
+  gap: 10px;
+}
+.search-box input {
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary {
+  background-color: var(--accent);
+  color: #000;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+  font-size: 1rem;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background-color: #ffd700;
+}
+#search-results {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: var(--radius);
+  text-align: left;
+  display: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* --- GRID KAFELKÓW --- */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 50px 0;
+}
+.card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  border: 1px solid #eee;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+.card h3 {
+  color: var(--primary);
+  margin: 0 0 10px 0;
+}
+
+/* --- SEKCJE --- */
+.section-block {
+  margin: 60px 0;
+}
+.section-title {
+  color: var(--primary);
+  border-bottom: 3px solid var(--accent);
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 30px;
+}
+
+/* --- ARTYKUŁ (WYDARZENIA) --- */
+.event-card {
+  display: flex;
+  gap: 30px;
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid #eee;
+}
+.event-image {
+  width: 300px;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-style: italic;
+  min-height: 200px;
+}
+.event-details {
+  padding: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.event-date {
+  color: var(--accent);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  align-self: start;
+  margin-top: 15px;
+  font-weight: 600;
+  transition: 0.2s;
+  font-size: 1rem;
+}
+.btn-outline:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* --- KONTAKT --- */
+.kontakt-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.contact-list {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+}
+.contact-list li {
+  margin-bottom: 10px;
+}
+.full-width {
+  width: 100%;
+}
+
+.opening-hours {
+  margin-top: 20px;
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--primary);
+}
+.opening-hours h3 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--primary);
+}
+.opening-hours ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.opening-hours li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 5px 0;
+}
+.opening-hours li:last-child {
+  border-bottom: none;
+}
+
+/* --- DEKLARACJA --- */
+.declaration-block {
+  background-color: #fff;
+  border-left: 5px solid var(--primary);
+  padding: 40px !important;
+  margin-bottom: 60px;
+}
+.declaration-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.declaration-content h3 {
+  font-size: 1.2rem;
+  color: var(--text-main);
+  border-bottom: 1px solid #ddd;
+  margin-top: 30px;
+  padding-bottom: 10px;
+}
+
+/* --- STOPKA --- */
+footer {
+  background-color: #222;
+  color: #bbb;
+  padding: 40px 0;
+  margin-top: 60px;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+  margin-left: 20px;
+}
+footer a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+/* --- MODALE --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.modal-overlay.open {
+  display: flex;
+}
+.modal-content {
+  background: var(--white);
+  width: 90%;
+  max-width: 600px;
+  padding: 40px;
+  border-radius: var(--radius);
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.modal-content h2 {
+  color: var(--primary);
+  margin-top: 0;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* =========================================
+   TRYB WYSOKIEGO KONTRASTU (Poprawiony)
+   ========================================= */
+body.high-contrast {
+  /* Wymuszamy kolory #000 i #FFD700 */
+  --bg-body: #000000;
+  --bg-header: #000000;
+  --text-main: #ffd700;
+  --text-light: #ffd700;
+  --primary: #ffd700;
+  --primary-dark: #000000;
+  --accent: #ffffff;
+  --white: #000000;
+  --shadow-sm: none;
+  --shadow-md: none;
+  background-color: #000000 !important;
+  color: #ffd700 !important;
+}
+
+/* Wymuszamy styl dla wszystkich elementów w trybie kontrastu, 
+   szczególnie inputy, które wcześniej znikały */
+body.high-contrast * {
+  border-color: #ffd700 !important;
+  background-color: #000000 !important;
+  color: #ffd700 !important;
+}
+
+/* Wyjątek dla przycisku akcji (żeby się wyróżniał) */
+body.high-contrast .btn-primary,
+body.high-contrast .access-btn.active {
+  background-color: #ffd700 !important;
+  color: #000000 !important;
+  font-weight: bold;
+}
+
+body.high-contrast a {
+  color: #fff !important;
+  text-decoration: underline;
+}
+
+/* Focus musi być bardzo widoczny */
+*:focus {
+  outline: 4px solid var(--accent) !important;
+  outline-offset: 3px;
+}
+
+/* TRYB DUŻEJ CZCIONKI */
+body.large-font {
+  font-size: 22px;
+}
+body.large-font h1 {
+  font-size: 2.5rem;
+}

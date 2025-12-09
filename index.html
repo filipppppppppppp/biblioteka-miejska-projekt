@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biblioteka Miejska - Projekt Dostępny</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>"
+    />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Przejdź do treści głównej</a>
+
+    <div
+      id="accessibility-bar"
+      role="region"
+      aria-label="Narzędzia dostępności"
+    >
+      <div class="container access-flex">
+        <span>Ułatwienia:</span>
+        <button
+          id="btn-contrast"
+          class="access-btn"
+          aria-label="Przełącz wysoki kontrast"
+        >
+          👁️ Kontrast
+        </button>
+        <button
+          id="btn-font"
+          class="access-btn"
+          aria-label="Zmień rozmiar tekstu"
+        >
+          A+ Tekst
+        </button>
+        <button
+          id="btn-speech"
+          class="access-btn"
+          aria-label="Czytaj lub zatrzymaj czytanie tekstu"
+        >
+          🔊 Czytaj stronę
+        </button>
+      </div>
+    </div>
+
+    <header role="banner">
+      <div class="container header-flex">
+        <a href="index.html" class="logo-link">
+          <div class="logo-symbol"></div>
+          <div class="logo-text">
+            <span class="logo-title">Biblioteka Miejska</span>
+            <span class="logo-subtitle">Dostępna dla każdego</span>
+          </div>
+        </a>
+
+        <nav id="main-nav" role="navigation" aria-label="Menu główne">
+          <ul>
+            <li><a href="index.html" class="active">Strona główna</a></li>
+            <li><a href="#katalog">Katalog online</a></li>
+            <li><a href="#wydarzenia">Wydarzenia</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" role="main" class="container">
+      <section id="katalog" class="hero-section">
+        <div class="hero-content">
+          <h1>Witaj w Bibliotece Miejskiej</h1>
+          <p>
+            Przeszukaj nasze zbiory. Posiadamy audiobooki, ebooki i książki z
+            dużą czcionką.
+          </p>
+
+          <form id="search-form" class="search-box">
+            <label for="search-input" class="visually-hidden"
+              >Wpisz tytuł, autora lub temat</label
+            >
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Np. Pan Tadeusz, Sienkiewicz..."
+              autocomplete="off"
+            />
+            <button type="submit" class="btn-primary">Szukaj</button>
+          </form>
+
+          <div id="search-results" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="info-grid">
+        <div class="card">
+          <div class="card-icon">♿</div>
+          <h3>Bez Barier</h3>
+          <p>
+            Budynek posiada podjazdy, windy oraz pętle indukcyjne dla osób
+            słabosłyszących.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎧</div>
+          <h3>Multimedia</h3>
+          <p>
+            Dostęp do tysięcy audiobooków i ebooków online bez wychodzenia z
+            domu.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">👴</div>
+          <h3>Dla Seniora</h3>
+          <p>Zajęcia komputerowe oraz usługa "Książka na telefon" z dowozem.</p>
+        </div>
+      </section>
+
+      <section id="wydarzenia" class="section-block">
+        <h2 class="section-title">Aktualności i Wydarzenia</h2>
+
+        <article class="event-card">
+          <div
+            class="event-image placeholder-img"
+            role="img"
+            aria-label="Zdjęcie uśmiechniętego autora siedzącego przy stoliku z książkami"
+          >
+            [Zdjęcie autora]
+          </div>
+          <div class="event-details">
+            <span class="event-date">Piątek, 17:00</span>
+            <h3>Spotkanie autorskie: Jan Kowalski</h3>
+            <p>
+              Zapraszamy na rozmowę o najnowszej książce. Wstęp wolny.
+              Zapewniamy tłumacza PJM (Polskiego Języka Migowego).
+            </p>
+            <button id="btn-event-details" class="btn-outline">
+              Więcej informacji
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <section id="kontakt" class="section-block kontakt-block">
+        <div class="contact-text">
+          <h2>Skontaktuj się z nami</h2>
+          <p>
+            Jesteśmy tu, aby Ci pomóc. Jeśli masz problem z dotarciem, zadzwoń.
+          </p>
+          <ul class="contact-list">
+            <li>📞 <strong>123 456 789</strong></li>
+            <li>📧 <strong>kontakt@biblioteka-miejska.pl</strong></li>
+            <li>📍 <strong>ul. Przykładowa 12, Miasto</strong></li>
+          </ul>
+
+          <div class="opening-hours">
+            <h3>Godziny otwarcia:</h3>
+            <ul>
+              <li>
+                <span>Poniedziałek - Piątek:</span>
+                <strong>08:00 - 19:00</strong>
+              </li>
+              <li><span>Sobota:</span> <strong>09:00 - 14:00</strong></li>
+              <li><span>Niedziela:</span> <strong>Nieczynne</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper">
+          <p>Chcesz o coś zapytać online?</p>
+          <button id="btn-open-contact" class="btn-primary full-width">
+            Otwórz formularz kontaktowy
+          </button>
+        </div>
+      </section>
+
+      <section id="deklaracja" class="declaration-block">
+        <h2>Deklaracja Dostępności</h2>
+        <div class="declaration-content">
+          <p>
+            <strong>Biblioteka Miejska</strong> zobowiązuje się zapewnić
+            dostępność swojej strony internetowej zgodnie z przepisami ustawy z
+            dnia 4 kwietnia 2019 r.
+          </p>
+          <h3>Status pod względem zgodności</h3>
+          <p>
+            Strona internetowa jest <strong>częściowo zgodna</strong> z ustawą o
+            dostępności cyfrowej.
+          </p>
+          <h3>Kontakt</h3>
+          <p>
+            Osobą kontaktową jest Jan Kowalski,
+            <a href="mailto:kontakt@biblioteka.pl">kontakt@biblioteka.pl</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <div class="container footer-content">
+        <div class="footer-left">
+          <p>&copy; 2025 Biblioteka Miejska</p>
+        </div>
+        <div class="footer-right">
+          <a href="#deklaracja">Deklaracja Dostępności</a>
+          <a href="#" onclick="alert('Polityka prywatności...')"
+            >Polityka Prywatności</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <div id="modal-event" class="modal-overlay" aria-hidden="true">
+      <div
+        class="modal-content"
+        role="dialog"
+        aria-labelledby="modal-event-title"
+      >
+        <h2 id="modal-event-title">Szczegóły wydarzenia</h2>
+        <p><strong>Spotkanie z Janem Kowalskim</strong></p>
+        <p>
+          Autor bestsellerowej powieści opowie o kulisach swojej pracy.
+          Spotkanie poprowadzi Anna Nowak.
+        </p>
+        <p>
+          Dostępność: Sala wyposażona w pętlę indukcyjną. Tłumacz PJM na
+          miejscu.
+        </p>
+        <button class="btn-primary close-modal">Zamknij</button>
+      </div>
+    </div>
+
+    <div id="modal-contact" class="modal-overlay" aria-hidden="true">
+      <div
+        class="modal-content"
+        role="dialog"
+        aria-labelledby="modal-contact-title"
+      >
+        <h2 id="modal-contact-title">Napisz do nas</h2>
+        <form id="real-contact-form">
+          <div class="form-group">
+            <label for="contact-name">Imię i Nazwisko:</label>
+            <input type="text" id="contact-name" required />
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Adres Email:</label>
+            <input type="email" id="contact-email" required />
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Wiadomość:</label>
+            <textarea id="contact-message" rows="4" required></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn-outline close-modal">
+              Anuluj
+            </button>
+            <button type="submit" class="btn-primary">Wyślij wiadomość</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
